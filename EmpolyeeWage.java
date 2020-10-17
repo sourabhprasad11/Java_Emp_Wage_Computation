@@ -9,23 +9,30 @@ public class EmpolyeeWage {
 		
 		float dailywage;
 		double emprandom=Math.floor(Math.random() * 10)%3;
+		int emp= (int) emprandom;
 		
-		if (emprandom == 1) {
+		switch (emp){
+		case 1:
 			System.out.println("Employee is Full time present");
 			dailywage=WAGE_PER_HR*FULL_DAY_HR;
 			System.out.println("Dailywage of the Employee= "+dailywage);
-		}
-		else if (emprandom == 2) {
+			break;
+		
+		case 2:
 			System.out.println("Employee is Part time Present");
 			dailywage=WAGE_PER_HR*PART_TIME_HR;
 			System.out.println("Part time wages of the Employee= "+dailywage);
-		}
-		else {
+			break;
+		
+		case 0:
 			System.out.println("Employee is absent");
 			dailywage=0; 
 			System.out.println("Dailywage of the Employee= "+dailywage);
+			break;
+		
+		default:
+			System.out.println("Error");
 		}
 		
 	}
-
 }
